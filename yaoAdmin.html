@@ -29,6 +29,8 @@
           <th>檢查點11</th>
           <th>檢查點12</th>
           <th>檢查點13</th>
+          <th>密碼</th>
+          <th>完成時間</th>
         </tr>
       </table>
     </div>
@@ -58,21 +60,25 @@
     </style>
 
     <script>
+      let history = false;
       const socket = io("https://socketio.weishianglian.com", {
         transports: ["websocket"]
       });
       socket.on("connect", () => {
         console.log("socket connect!");
-
-        socket.emit("yaoAdmin", { name: "yao" }, function(data) {
-          data.map(d => createTr(d));
-        });
-        socket.on("yaoNew", function(data) {
-          createTr(data);
-        });
+        if (!history) {
+          socket.emit("yaoAdmin", { name: "yao" }, function(data) {
+            data.map(d => createTr(d));
+          });
+          history = true;
+        }
+      });
+      socket.on("yaoNew", function(data) {
+        createTr(data);
       });
 
       function createTr(data) {
+        console.log(data);
         const { rawData } = data;
         const row = `
         <tr>
@@ -93,8 +99,13 @@
           <td>${rawData.checkPoint11}</td>
           <td>${rawData.checkPoint12}</td>
           <td>${rawData.checkPoint13}</td>
+          <td>${rawData.checkPoint14}</td>
+          <td>${dateConvert(data.createdAt).toLocaleString()}</td>
         </tr>`;
         $("#list").append(row);
+      }
+      function dateConvert(date) {
+        return new Date(date);
       }
     </script>
   </body>
