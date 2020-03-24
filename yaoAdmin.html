@@ -6,9 +6,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/style/index.css" />
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"></script>
   </head>
   <body>
+    <h1 id="time" style="text-align:center"></h1>
     <div id="listBox">
       <table id="list">
         <tr>
@@ -60,21 +60,9 @@
     </style>
 
     <script>
-      let history = false;
-      const socket = io("https://socketio.weishianglian.com", {
-        transports: ["websocket"]
-      });
-      socket.on("connect", () => {
-        console.log("socket connect!");
-        if (!history) {
-          socket.emit("yaoAdmin", { name: "yao" }, function(data) {
-            data.map(d => createTr(d));
-          });
-          history = true;
-        }
-      });
-      socket.on("yaoNew", function(data) {
-        createTr(data);
+      $("#time").text(new Date().toLocaleString());
+      $.get("https://socketio.weishianglian.com/yaoAdmin", data => {
+        data.map(d => createTr(d));
       });
 
       function createTr(data) {

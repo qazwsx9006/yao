@@ -6,7 +6,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/style/index.css" />
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"></script>
   </head>
   <body>
     <div class="formBox">
@@ -338,13 +337,6 @@
     </div>
 
     <script>
-      const socket = io("https://socketio.weishianglian.com", {
-        transports: ["websocket"]
-      });
-      socket.on("connect", () => {
-        console.log("socket connect!");
-      });
-
       var result = {};
       $(".action button").on("click", function() {
         let pass = true;
@@ -377,7 +369,8 @@
 
         if ($(this).hasClass("submit")) {
           var self = this;
-          socket.emit("yao", result, function(data) {
+          var url = "https://socketio.weishianglian.com/yao";
+          $.post(url, result, data => {
             console.log(0, data);
             $(self)
               .parents(".form")
