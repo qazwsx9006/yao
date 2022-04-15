@@ -61,7 +61,7 @@
 
     <script>
       $("#time").text(new Date().toLocaleString());
-      $.get("https://socketio.weishianglian.com/yaoAdmin", data => {
+      $.get("https://mingyu.bonimages.tw/yaoAdmin", data => {
         data.map(d => createTr(d));
       });
 
