@@ -1,0 +1,9 @@
+啟動指令
+
+$ docker compose -f docker-compose.yml -p nginx up -d
+
+
+Nginx 指令
+
+$ docker exec -it <NGINX CONTAINER ID> nginx -t
+$ docker exec -it <NGINX CONTAINER ID> nginx -s reload

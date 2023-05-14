@@ -9,9 +9,9 @@
     "port": 3000
   },
   "databaseConfig": {
-    "username": "root",
-    "password": "a1s2d3f4",
-    "database": "node_template",
+    "username": "yao",
+    "password": "1q2w3e4r",
+    "database": "yao",
     "host": "localhost",
     "dialect": "mysql",
     "port": 3306,

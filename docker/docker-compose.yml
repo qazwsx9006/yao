@@ -1,0 +1,36 @@
+version: "3.3"
+
+services:
+  database:
+    image: mariadb
+    volumes:
+      - data-volume:/var/lib/mysql
+      - bin-log-volume:/var/log/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: 1q2w3e4r
+      MARIADB_ROOT_HOST: localhost
+      MARIADB_DATABASE: yao
+      MARIADB_USER: yao
+      MARIADB_PASSWORD: 1q2w3e4r
+    ports:
+      - 3306:3306
+    restart: unless-stopped
+    command:
+      - --log_bin=/var/log/mysql/mariadb-bin
+      - --log_bin_index=/var/log/mysql/mariadb-bin.index
+      - --expire_logs_days=8
+      - --max_binlog_size=100M
+  nginx:
+    image: nginx:latest
+    network_mode: "host"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - /var/log/nginx:/var/log/nginx
+    ports:
+      - 80:80
+    restart: unless-stopped
+
+volumes:
+  data-volume:
+  bin-log-volume:

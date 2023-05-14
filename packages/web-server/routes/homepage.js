@@ -5,6 +5,11 @@ const homePageController = new HomePageController();
 
 const routes = [
   {
+    method: "get",
+    path: "/",
+    handler: homePageController.home,
+  },
+  {
     method: "post",
     path: "/form",
     handler: homePageController.createForm,
