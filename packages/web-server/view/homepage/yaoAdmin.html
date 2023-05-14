@@ -1,0 +1,81 @@
+<h1 id="time" style="text-align: center"></h1>
+<div id="listBox">
+  <table id="list">
+    <tr>
+      <th>班級</th>
+      <th>座號</th>
+      <th>小隊</th>
+      <th>棒次</th>
+      <th>檢查點1</th>
+      <th>檢查點2</th>
+      <th>檢查點3</th>
+      <th>檢查點4</th>
+      <th>檢查點5</th>
+      <th>檢查點6</th>
+      <th>檢查點7</th>
+      <th>檢查點8</th>
+      <th>檢查點9</th>
+      <th>檢查點10</th>
+      <th>檢查點11</th>
+      <th>檢查點12</th>
+      <th>檢查點13</th>
+      <th>密碼</th>
+      <th>完成時間</th>
+    </tr>
+    <% params.games.map(game => { %>
+    <tr>
+      <td><%= game.class %></td>
+      <td><%= game.number %></td>
+      <td><%= game.team %></td>
+      <td><%= game.teamNumber %></td>
+      <td><%= game.checkPoint1 %></td>
+      <td><%= game.checkPoint2 %></td>
+      <td><%= game.checkPoint3 %></td>
+      <td><%= game.checkPoint4 %></td>
+      <td><%= game.checkPoint5 %></td>
+      <td><%= game.checkPoint6 %></td>
+      <td><%= game.checkPoint7 %></td>
+      <td><%= game.checkPoint8 %></td>
+      <td><%= game.checkPoint9 %></td>
+      <td><%= game.checkPoint10 %></td>
+      <td><%= game.checkPoint11 %></td>
+      <td><%= game.checkPoint12 %></td>
+      <td><%= game.checkPoint13 %></td>
+      <td><%= game.checkPoint14 %></td>
+      <td><%= game.createdAt %></td>
+    </tr>
+    <% }) %>
+  </table>
+</div>
+<style>
+  #listBox {
+    padding: 5px;
+    overflow: auto;
+    width: 100%;
+  }
+  #list {
+    margin: 0 auto;
+  }
+  #list th,
+  #list td {
+    padding: 3px;
+    border: 1px solid #aaa;
+  }
+  #list th {
+    background: rgba(100, 100, 100, 0.6);
+  }
+  #list td:nth-child(odd) {
+    background: rgba(100, 100, 100, 0.4);
+  }
+  #list tr:hover {
+    background: rgba(100, 100, 100, 0.8);
+  }
+</style>
+
+<script>
+  $("#time").text(new Date().toLocaleString());
+
+  function dateConvert(date) {
+    return new Date(date);
+  }
+</script>

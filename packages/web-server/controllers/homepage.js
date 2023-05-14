@@ -30,6 +30,20 @@ class HomePageController {
     console.log(game.toJSON());
     ctx.body = { result: "ok" };
   }
+
+  async admin(ctx) {
+    const games = await Game.findAll({ where: {} });
+    const domain = `https://${config.domain}`;
+    await ctx.render("homepage/yaoAdmin", {
+      params: {
+        meta: {
+          url: `${domain}`,
+        },
+        games,
+        domain,
+      },
+    });
+  }
 }
 
 module.exports = HomePageController;

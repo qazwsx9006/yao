@@ -19,6 +19,11 @@ const routes = [
     path: "/form",
     handler: homePageController.form,
   },
+  {
+    method: "get",
+    path: "/yaoAdmin",
+    handler: homePageController.admin,
+  },
 ];
 
 module.exports = routes;
