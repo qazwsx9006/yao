@@ -42,7 +42,9 @@
       <td><%= game.checkPoint12 %></td>
       <td><%= game.checkPoint13 %></td>
       <td><%= game.checkPoint14 %></td>
-      <td><%= game.createdAt %></td>
+      <td>
+        <%= game.createdAt.toLocaleString("zh-TW", {timeZone: 'Asia/Taipei'}) %>
+      </td>
     </tr>
     <% }) %>
   </table>
@@ -73,7 +75,9 @@
 </style>
 
 <script>
-  $("#time").text(new Date().toLocaleString());
+  $("#time").text(
+    new Date().toLocaleString("zh-TW", { timeZone: "Asia/Taipei" })
+  );
 
   function dateConvert(date) {
     return new Date(date);
