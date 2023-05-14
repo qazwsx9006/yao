@@ -1,0 +1,26 @@
+{
+  "name": "@mingyu/server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --forceExit --runInBand --coverage",
+    "start": "node index.js"
+  },
+  "author": "MingYu",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.5.3"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "@koa/multer": "^3.0.0",
+    "koa": "^2.13.0",
+    "koa-basic-auth": "^4.0.0",
+    "koa-body": "^6.0.1",
+    "koa-joi-router": "^6.0.2",
+    "koa-logger": "^3.2.1",
+    "koa-static": "^5.0.0",
+    "multer": "^1.4.2"
+  }
+}

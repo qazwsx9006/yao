@@ -1,0 +1,26 @@
+{
+  "projectName": "example",
+  "apiServer": {
+    "serverName": "API",
+    "port": 3002
+  },
+  "webServer": {
+    "serverName": "WEB",
+    "port": 3000
+  },
+  "databaseConfig": {
+    "username": "root",
+    "password": "a1s2d3f4",
+    "database": "node_template",
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": 3306,
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
+  },
+  "domain": "localhost"
+}

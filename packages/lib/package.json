@@ -1,0 +1,19 @@
+{
+  "name": "@mingyu/lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MingYu",
+  "license": "ISC",
+  "devDependencies": {
+    "sequelize-cli": "^6.6.0"
+  },
+  "dependencies": {
+    "config": "^3.3.2",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
+}

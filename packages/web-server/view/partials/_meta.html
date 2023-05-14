@@ -1,0 +1,19 @@
+<meta property="og:type" content="website" />
+<meta
+  property="og:title"
+  content="<%= params.meta && params.meta.title || params.title || 'default meta title' %>"
+/>
+<meta
+  property="og:description"
+  content="<%= params.meta && params.meta.description || 'default meta description' %>"
+/>
+<meta
+  property="og:image"
+  content="<%= params.meta && params.meta.image || `${params.domain}/meta.png` %>"
+/>
+<!-- <% if(params.url){ %> -->
+<meta property="og:url" content="<%= params.url %>" />
+<!-- <% } %> -->
+<meta property="og:site_name" content="default site name" />
+<meta name="twitter:image:alt" content="default image alt" />
+<meta name="twitter:card" content="summary_large_image" />

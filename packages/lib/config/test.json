@@ -1,0 +1,9 @@
+{
+  "jsonFile": "test",
+  "databaseConfig": {
+    "username": "test",
+    "password": "1q2w3e4r",
+    "database": "yao"
+  },
+  "domain": "localhost:3000"
+}

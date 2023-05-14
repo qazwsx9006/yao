@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "name": "yao",
+  "workspaces": [
+    "packages/*"
+  ],
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pre-start": "yarn install",
+    "clean": "lerna clean",
+    "bootstrap": "lerna bootstrap",
+    "lint": "eslint .",
+    "test": "jest --forceExit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qazwsx9006/yao.git"
+  },
+  "author": "MingYu",
+  "license": "ISC",
+  "engines": {
+    "node": ">= 12.18.0"
+  },
+  "bugs": {
+    "url": "https://github.com/qazwsx9006/yao/issues"
+  },
+  "homepage": "https://github.com/qazwsx9006/yao#readme",
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "dependencies": {
+    "supertest": "^5.0.0"
+  }
+}

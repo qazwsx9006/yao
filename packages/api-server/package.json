@@ -1,0 +1,13 @@
+{
+  "name": "@mingyu/api-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --forceExit --runInBand --coverage",
+    "start": "node index.js"
+  },
+  "author": "MingYu",
+  "license": "ISC",
+  "dependencies": {}
+}

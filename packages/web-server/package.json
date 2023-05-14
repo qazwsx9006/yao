@@ -1,0 +1,18 @@
+{
+  "name": "@mingyu/web-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --forceExit --runInBand --coverage",
+    "start": "node index.js"
+  },
+  "author": "MingYu",
+  "license": "ISC",
+  "dependencies": {
+    "gm": "^1.25.0",
+    "koa-basic-auth": "^4.0.0",
+    "koa-ejs": "^4.3.0",
+    "wkhtmltoimage": "^0.1.5"
+  }
+}
